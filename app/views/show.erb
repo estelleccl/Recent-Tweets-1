@@ -1,0 +1,8 @@
+<%= @user.twitter_username %>
+
+<% if !@tweets.nil? %>
+	<% @tweets.each do |tweet| %>
+		<p><%= tweet.tweet_text %></p><br>
+	<% end %>
+<% end %>
+
