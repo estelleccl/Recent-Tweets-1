@@ -35,7 +35,6 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
-require APP_ROOT.join('lib', 'twitter_importer')
 
 #Set up Twitter
 require 'twitter'
@@ -43,7 +42,7 @@ require 'yaml'
 
 API_KEYS = YAML::load(File.open('config/api_keys.yaml'))
 
-TWITTER_CLIENT = Twitter::REST::Client.new do |config|
+$twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = API_KEYS["development"]["twitter_consumer_key_id"]
       config.consumer_secret     = API_KEYS["development"]["twitter_consumer_secret_key_id"]
       config.access_token        = API_KEYS["development"]["twitter_consumer_access_token_id"]

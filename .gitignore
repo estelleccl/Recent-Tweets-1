@@ -25,4 +25,4 @@ chromedriver.log
 bin/
 .env
 *.swp
-config/api_key.yaml
+config/api_keys.yaml
